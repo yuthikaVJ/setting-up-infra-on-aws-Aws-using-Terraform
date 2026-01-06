@@ -1,26 +1,33 @@
-!#/bin/bash
+#!/bin/bash
 
 ##############################
 # Docker Installation Script #                                                           
 # Author: Realsteel          #                                                           
-# Date: 2024-06-15           #                                                               
+# Date: 2026-01-05           #                                                               
 # Version: 1.0               #
 #############################
 
+set -e 
+
 
 #System Update
-sudo apt update
+ apt update  -y
 
 #Docker Installation
-sudo apt install docker.io -y
+ apt install docker.io -y
+
+#Start and Enable Docker Service
+systemctl start docker
+systemctl enable docker
 
 #Add ubuntu to docker group
-sudo usermod -aG docker ubuntu
+ usermod -aG docker ubuntu
 
 #pull the docker image
-docker pull 
+docker pull   <ddd>
 
 #Run the docker container
-docker run -d -p 80:80 yuthikarathod/myapp:latest
+docker run  --name web_app -d -p 80:80   <ddd>
+
 
 #End of script
