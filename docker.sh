@@ -24,10 +24,10 @@ systemctl enable docker
  usermod -aG docker ubuntu
 
 #pull the docker image
-docker pull   <ddd>
+docker pull   <your docker image>
 
 #Run the docker container
-docker run  --name web_app -d -p 80:80   <ddd>
+docker run  --name web_app -d -p 80:80   <your docker image>
 
 
 #End of script
